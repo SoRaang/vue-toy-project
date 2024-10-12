@@ -1,0 +1,10 @@
+/* _footers.scss */
+
+#footPrimary { // 메인 푸터
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    border-block-start: 1px solid rgb(var(--clr-max) / .15);
+}
+
+/* _footers.scss */

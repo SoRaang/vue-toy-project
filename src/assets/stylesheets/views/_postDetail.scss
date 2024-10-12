@@ -1,0 +1,40 @@
+/* _postDetail.scss */
+
+#postImageSlider {
+    border-radius: .4rem;
+    overflow: hidden;
+}
+
+.article-image-slide {
+    position: relative;
+}
+
+.article-image-description {
+    position: absolute;
+    inset: 0;
+    margin: auto auto 0;
+    padding: .4rem;
+    height: fit-content;
+    background-color: rgb(var(--clr-min));
+    color: rgb(var(--clr-text-on-surface));
+    font-size: var(--fnt-sm);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    opacity: .75;
+}
+
+#postSliderControls {
+
+}
+
+#postTitle {
+    font-size: var(--fnt-title-md);
+}
+
+#postSummaries {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* _postDetail.scss */

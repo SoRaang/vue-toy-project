@@ -1,0 +1,59 @@
+[
+    {
+        "id": 132512,
+        "title": "2341254gfjapeirgjpej",
+        "text": "jawpregjpaoewrgjvp",
+        "images": [
+            { "imageURL": "https://picsum.photos/1920/1080?random=1", "alt": "" },
+            { "imageURL": "https://picsum.photos/1920/1080?random=2", "alt": "ㅇㅇ" },
+            { "imageURL": "https://picsum.photos/1920/1080?random=3", "alt": "?" }
+        ],
+        "comments": [
+            {
+                "userID": 123127,
+                "userName": "윤길동",
+                "userImage": "https://picsum.photos/96/96?random=6",
+                "commentText": "잼있네요",
+                "date": "2024-09-12"
+            }
+        ],
+        "likes": [],
+        "author": {
+            "userID": 123125,
+            "userName": "홍길동",
+            "userImage": "https://picsum.photos/96/96?random=4"
+        },
+        "date": "2024-09-12",
+        "time": "23:11"
+    },
+    {
+        "id": 132451,
+        "title": "aerghaerthbatgha",
+        "text": "jawpregjpaoewrgjvp",
+        "images": [],
+        "comments": [],
+        "likes": [],
+        "author": {
+            "userID": 123126,
+            "userName": "정길동",
+            "userImage": "https://picsum.photos/96/96?random=5"
+        },
+        "date": "2024-09-12",
+        "time": "23:11"
+    },
+    {
+        "id": 754211,
+        "title": "23yg5ygh54yager",
+        "text": "jawpregjpaoewrgjvp",
+        "images": [],
+        "comments": [],
+        "likes": [],
+        "author": {
+            "userID": 123127,
+            "userName": "윤길동",
+            "userImage": "https://picsum.photos/96/96?random=6"
+        },
+        "date": "2024-09-12",
+        "time": "23:11"
+    }
+]

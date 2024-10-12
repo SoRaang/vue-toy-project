@@ -1,0 +1,75 @@
+/* _buttons.scss */
+
+button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    outline: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.buttons {
+    --button-surface-color: var(--clr-theme);
+    --button-outline-color: transparent;
+    --button-text-color: var(--clr-text-on-tint);
+
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    height: 1.6rem;
+    padding-inline: .8rem;
+    border: 1px solid var(--button-outline-color);
+    border-radius: .2rem;
+    background-color: rgb(var(--button-surface-color));
+    outline-offset: .1rem;
+    color: rgb(var(--button-text-color));
+    font-size: var(--fnt-sm);
+    font-weight: 700;
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: rgb(var(--clr-tint-20));
+    }
+
+    &:active {
+        background-color: rgb(var(--clr-tint-0));
+        outline-offset: .2rem;
+    }
+
+    &:focus {
+        outline: .1rem dashed rgb(var(--clr-tint-100) / .5);
+    }
+
+    > .remix {
+        width: .8rem;
+    }
+
+    > span {
+        order: 1;
+    }
+
+    &.front {
+        > .remix {
+            order: 0;
+        }
+    }
+
+    &.back {
+        > .remix {
+            order: 2;
+        }
+    }
+
+    &.only {
+        justify-content: center;
+        padding-inline: 0;
+        width: 1.6rem;
+
+        > span {
+            display: none;
+        }
+    }
+}
+
+/* _buttons.scss */

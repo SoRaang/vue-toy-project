@@ -1,0 +1,13 @@
+/* _keyframes.scss */
+
+@keyframes rotate-conic {
+    from {
+        --conic-range: 0deg;
+    }
+
+    to {
+        --conic-range: 360deg;
+    }
+}
+
+/* _keyframes.scss */
