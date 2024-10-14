@@ -72,4 +72,36 @@ button {
     }
 }
 
+.button-post-controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: .4rem;
+    font-size: var(--fnt-sm);
+    overflow: hidden;
+
+    > span {
+        position: absolute;
+        inset-inline: 0;
+        inset-block: 0 calc(100% - 1.2rem);
+        margin-inline: auto;
+        margin-block: auto;
+    }
+
+    &:hover {
+        background-image: radial-gradient(circle at top, rgb(var(--clr-max) / .1), transparent);
+        backdrop-filter: blur(.4rem);
+        outline: .1rem solid rgb(var(--clr-max) / .25);
+        outline-offset: .1rem;
+
+        > span {
+            position: static;
+        }
+    }
+}
+
 /* _buttons.scss */

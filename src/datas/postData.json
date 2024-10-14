@@ -1,7 +1,8 @@
 [
     {
         "id": 132512,
-        "title": "2341254gfjapeirgjpej",
+        "title": "이것은 글 제목",
+        "category": 1,
         "text": "jawpregjpaoewrgjvp",
         "images": [
             { "imageURL": "https://picsum.photos/1920/1080?random=1", "alt": "" },
@@ -17,7 +18,10 @@
                 "date": "2024-09-12"
             }
         ],
-        "likes": [],
+        "likes": [
+            132451,
+            754211
+        ],
         "author": {
             "userID": 123125,
             "userName": "홍길동",
@@ -29,6 +33,7 @@
     {
         "id": 132451,
         "title": "aerghaerthbatgha",
+        "category": 1,
         "text": "jawpregjpaoewrgjvp",
         "images": [],
         "comments": [],
@@ -44,6 +49,7 @@
     {
         "id": 754211,
         "title": "23yg5ygh54yager",
+        "category": 1,
         "text": "jawpregjpaoewrgjvp",
         "images": [],
         "comments": [],
