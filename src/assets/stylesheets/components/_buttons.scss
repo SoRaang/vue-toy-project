@@ -73,33 +73,50 @@ button {
 }
 
 .button-post-controls {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: .2rem;
+    --button-icon-color: currentColor;
+
+    position: relative;
     width: 3.6rem;
     height: 3.6rem;
     border-radius: .4rem;
     font-size: var(--fnt-sm);
     overflow: hidden;
+    user-select: none;
+
+    > .remix {
+        position: absolute;
+        inset-block: 0;
+        inset-inline: 0;
+        margin-block: auto;
+        margin-inline: auto;
+        width: .8rem;
+        transition: .25s;
+    }
 
     > span {
+        display: block;
         position: absolute;
+        inset-block-start: calc(100% + 1.6rem);
         inset-inline: 0;
-        inset-block: 0 calc(100% - 1.2rem);
-        margin-inline: auto;
-        margin-block: auto;
+        margin: auto;
+        transition: .25s;
     }
 
     &:hover {
-        background-image: radial-gradient(circle at top, rgb(var(--clr-max) / .1), transparent);
+        background-image: radial-gradient(circle at top, rgb(var(--button-icon-color) / .1), rgb(var(--clr-surface-0)));
         backdrop-filter: blur(.4rem);
-        outline: .1rem solid rgb(var(--clr-max) / .25);
-        outline-offset: .1rem;
+        box-shadow: 0 0 .8rem -.2rem rgb(var(--button-icon-color) / .25);
+        outline: 1px solid rgb(var(--button-icon-color) / .25);
+        outline-offset: 1px;
+        text-shadow: 0 .1rem .1rem rgb(0 0 0 / .5);
+
+        > .remix {
+            inset-block: 0 1.2rem;
+            color: rgb(var(--button-icon-color));
+        }
 
         > span {
-            position: static;
+            inset-block-start: calc(50% + .2rem);
         }
     }
 }

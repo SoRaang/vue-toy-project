@@ -25,7 +25,7 @@
         <div id="postImageSlider" class="no-images" v-else></div> <!-- #postImageSlider -->
 
         <div id="postInformations">
-            <p class="article-info-category">{{ categoryExample[thisArticle.category] }}</p>
+            <p class="article-info-category">{{ postCategory[thisArticle.category] }}</p>
 
             <h1 id="postTitle">{{ thisArticle.title }}</h1> <!-- postTitle -->
 
@@ -65,7 +65,7 @@
         </div> <!-- #articleText -->
 
         <div id="postControls">
-            <button type="button" class="button-post-controls" title="어쩌고">
+            <button type="button" class="button-post-controls" title="좋아요" style="--button-icon-color: var(--clr-alert);">
                 <svg class="remix">
                     <use xlink:href="/miscs/remixicon.symbol.svg#ri-heart-line"></use>
                 </svg>
@@ -73,15 +73,15 @@
                 <span>좋아요</span>
             </button>
 
-            <button type="button" class="button-post-controls" title="어쩌고">
+            <button type="button" class="button-post-controls" title="미디어 정보" style="--button-icon-color: var(--clr-clear);">
                 <svg class="remix">
-                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-add-line"></use>
+                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-information-2-line"></use>
                 </svg>
 
-                <span>앨범 추가</span>
+                <span>미디어 정보</span>
             </button>
 
-            <button type="button" class="button-post-controls" title="어쩌고">
+            <button type="button" class="button-post-controls" title="공유" style="--button-icon-color: var(--clr-warn);">
                 <svg class="remix">
                     <use xlink:href="/miscs/remixicon.symbol.svg#ri-share-2-line"></use>
                 </svg>
@@ -115,16 +115,11 @@
 <script setup>
     import { useRouter, useRoute } from 'vue-router';
     import postData from '../datas/postData.json'; // 임시 데이터
+    import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
 
     const router = useRouter();
     const route = useRoute();
     const thisArticle = postData.filter(item => item.id === parseInt(route.params.postID))[0];
-    const categoryExample = { // 임시 카테고리 데이터
-        1: '일상',
-        2: 'TIL',
-        3: '정보',
-        4: '리뷰'
-    }
 
     const swiperParams = {
         slidesPerView: 1,
