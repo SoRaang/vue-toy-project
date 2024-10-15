@@ -2,12 +2,13 @@
     {
         "id": 132512,
         "title": "이것은 글 제목",
+        "thumbIndex": 1,
         "category": 4,
         "text": "jawpregjpaoewrgjvp",
         "images": [
-            { "imageURL": "https://picsum.photos/1920/1080?random=1", "alt": "" },
-            { "imageURL": "https://picsum.photos/1920/1080?random=2", "alt": "ㅇㅇ" },
-            { "imageURL": "https://picsum.photos/1920/1080?random=3", "alt": "?" }
+            { "index": 0, "imageURL": "https://picsum.photos/1920/1080?random=1", "alt": "" },
+            { "index": 1, "imageURL": "https://picsum.photos/1920/1080?random=2", "alt": "ㅇㅇ" },
+            { "index": 2, "imageURL": "https://picsum.photos/1920/1080?random=3", "alt": "?" }
         ],
         "comments": [
             {
@@ -33,6 +34,7 @@
     {
         "id": 132451,
         "title": "aerghaerthbatgha",
+        "thumbIndex": null,
         "category": 1,
         "text": "jawpregjpaoewrgjvp",
         "images": [],
@@ -49,6 +51,7 @@
     {
         "id": 754211,
         "title": "23yg5ygh54yager",
+        "thumbIndex": null,
         "category": 1,
         "text": "jawpregjpaoewrgjvp",
         "images": [],

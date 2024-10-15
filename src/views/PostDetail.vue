@@ -64,6 +64,10 @@
             {{ thisArticle.text }}
         </div> <!-- #articleText -->
 
+        <div id="articleMedia">
+            미디어 링크
+        </div> <!-- #articleMedia -->
+
         <div id="postControls">
             <button type="button" class="button-post-controls" title="좋아요" style="--button-icon-color: var(--clr-alert);">
                 <svg class="remix">
@@ -105,21 +109,16 @@
                 <p>{{ commentItem.date }}</p>
             </div>
         </div> <!-- #postReplies -->
-
-        <div id="postNavigation">
-            <button @click="router.go(-1)">뒤로</button>
-        </div> <!-- #postNavigation -->
     </article> <!-- #postDetail -->
 </template> <!-- Template Ends -->
 
 <script setup>
-    import { useRouter, useRoute } from 'vue-router';
+    import { useRoute } from 'vue-router';
     import postData from '../datas/postData.json'; // 임시 데이터
     import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
 
-    const router = useRouter();
     const route = useRoute();
-    const thisArticle = postData.filter(item => item.id === parseInt(route.params.postID))[0];
+    const thisArticle = postData.find(item => item.id === parseInt(route.params.postID));
 
     const swiperParams = {
         slidesPerView: 1,

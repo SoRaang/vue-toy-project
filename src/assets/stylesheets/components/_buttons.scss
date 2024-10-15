@@ -10,9 +10,9 @@ button {
 }
 
 .buttons {
-    --button-surface-color: var(--clr-theme);
-    --button-outline-color: transparent;
-    --button-text-color: var(--clr-text-on-tint);
+    --button-surface-color: var(--clr-theme); // 버튼 배경 컬러
+    --button-outline-color: transparent; // 버튼 테두리 컬러
+    --button-text-color: var(--clr-text-on-tint); // 버튼 텍스트 컬러
 
     display: flex;
     align-items: center;
@@ -73,7 +73,7 @@ button {
 }
 
 .button-post-controls {
-    --button-icon-color: currentColor;
+    --button-icon-color: currentColor; // 버튼 마우스 오버시 변경될 컬러
 
     position: relative;
     width: 3.6rem;
@@ -99,10 +99,12 @@ button {
         inset-block-start: calc(100% + 1.6rem);
         inset-inline: 0;
         margin: auto;
+        opacity: 0;
         transition: .25s;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         background-image: radial-gradient(circle at top, rgb(var(--button-icon-color) / .1), rgb(var(--clr-surface-0)));
         backdrop-filter: blur(.4rem);
         box-shadow: 0 0 .8rem -.2rem rgb(var(--button-icon-color) / .25);
@@ -117,6 +119,7 @@ button {
 
         > span {
             inset-block-start: calc(50% + .2rem);
+            opacity: 1;
         }
     }
 }

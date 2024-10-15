@@ -1,0 +1,43 @@
+/* _postList.scss */
+
+.article-item {
+    > .article-item-wrapper {
+        display: flex;
+        gap: .8rem;
+    }
+}
+
+.article-item-image-container {
+    position: relative;
+    width: 9.6rem;
+    aspect-ratio: 4 / 3;
+    background-color: rgb(var(--clr-if-100));
+
+    > .remix {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 2.4rem;
+        opacity: .25;
+    }
+}
+
+.article-item-thumbnail {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* 반응형 쿼리 */
+
+@container main-container (max-width: 960px) {
+
+}
+
+@container main-container (max-width: 640px) {
+
+}
+
+/* _postList.scss */
