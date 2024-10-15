@@ -30,15 +30,7 @@
             <h1 id="postTitle">{{ thisArticle.title }}</h1> <!-- postTitle -->
 
             <div id="postSummaries">
-                <div class="user-name-tag">
-                    <div class="user-profile-image">
-                        <img :src="thisArticle.author.userImage" alt="사용자 프로파일 이미지">
-                    </div>
-
-                    <p class="user-name">
-                        <span>{{ thisArticle.author.userName }}</span>
-                    </p>
-                </div>
+                <UserNameTag :user-id="thisArticle.author.userId" />
 
                 <span>·</span>
 
@@ -60,9 +52,7 @@
             </div> <!-- #postSummaries -->
         </div>  <!-- #postInformations -->
 
-        <div id="articleText">
-            {{ thisArticle.text }}
-        </div> <!-- #articleText -->
+        <div id="articleText" v-dompurify-html="thisArticle.text"></div> <!-- #articleText -->
 
         <div id="articleMedia">
             미디어 링크
@@ -77,12 +67,12 @@
                 <span>좋아요</span>
             </button>
 
-            <button type="button" class="button-post-controls" title="미디어 정보" style="--button-icon-color: var(--clr-clear);">
+            <button type="button" class="button-post-controls" title="미디어" style="--button-icon-color: var(--clr-clear);">
                 <svg class="remix">
-                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-information-2-line"></use>
+                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-music-2-line"></use>
                 </svg>
 
-                <span>미디어 정보</span>
+                <span>미디어</span>
             </button>
 
             <button type="button" class="button-post-controls" title="공유" style="--button-icon-color: var(--clr-warn);">
@@ -95,28 +85,33 @@
         </div> <!-- #postControls -->
 
         <div id="postReplies">
-            <div>
-                <svg class="remix">
-                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-chat-2-line"></use>
-                </svg>
+            <div class="post-replies-titlebar">
+                <div class="reply-bubble-animation">
+                    <svg class="remix">
+                        <use xlink:href="/miscs/remixicon.symbol.svg#ri-chat-3-line"></use>
+                    </svg>
 
-                <p>댓글 [{{ thisArticle.comments.length }}]</p>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p>댓글 <span>·</span> <span>총 {{ thisArticle.comments.length }} 개</span></p>
             </div>
 
-            <div v-for="(commentItem, index) in thisArticle.comments" :key="index">
-                <p>{{ commentItem.userName }} 님</p>
-                <p>{{ commentItem.commentText }}</p>
-                <p>{{ commentItem.date }}</p>
-            </div>
+            <ArticleReply v-for="(commentItem, index) in thisArticle.comments" :key="index" :reply-object="commentItem" />
         </div> <!-- #postReplies -->
     </article> <!-- #postDetail -->
 </template> <!-- Template Ends -->
 
 <script setup>
-    import { useRoute } from 'vue-router';
+    import { useRouter, useRoute } from 'vue-router';
     import postData from '../datas/postData.json'; // 임시 데이터
     import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
+    import ArticleReply from '../components/ArticleReply.vue';
+import UserNameTag from '../components/elements/UserNameTag.vue';
 
+    const router = useRouter();
     const route = useRoute();
     const thisArticle = postData.find(item => item.id === parseInt(route.params.postID));
 
@@ -136,10 +131,8 @@
             el: '.slider-pagination'
         }
     }
-
-    console.log(thisArticle);
 </script> <!-- Logic Ends -->
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style> <!-- Stylesheet Ends -->

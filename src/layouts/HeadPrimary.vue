@@ -37,10 +37,10 @@
                 <ButtonWithIcon element-id="btnTotalSearch" icon-position="only" icon-name="search-2-line" @click="console.log(searchKeyword)">
                     검색
                 </ButtonWithIcon>
-            </div>
+            </div> <!-- #totalSearchContainer -->
 
             <UserControls />
-        </div>
+        </div> <!-- #menuElements -->
     </header> <!-- #headPrimary -->
 </template> <!-- Template Ends -->
 

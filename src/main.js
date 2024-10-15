@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { register } from 'swiper/element/bundle';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
 // Import --- System
 
@@ -27,4 +28,5 @@ myProject.component('ButtonWithIcon', ButtonWithIcon);
 myProject
     .use(router)
     .use(pinia)
+    .use(VueDOMPurifyHTML)
     .mount('#app')
