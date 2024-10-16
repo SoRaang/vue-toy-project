@@ -13,8 +13,6 @@
 </template> <!-- Template Ends -->
 
 <script setup>
-    import UserNameTag from './elements/UserNameTag.vue';
-
     const props = defineProps([ 'replyObject' ]);
 </script> <!-- Logic Ends -->
 

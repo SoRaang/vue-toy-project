@@ -47,16 +47,14 @@
                         <use xlink:href="/miscs/remixicon.symbol.svg#ri-heart-fill"></use>
                     </svg>
 
-                    <span>{{ thisArticle.likes.length }}</span>
+                    <span>{{ thisArticle.likes.length.toLocaleString('ko-KR') }}</span>
                 </p>
             </div> <!-- #postSummaries -->
         </div>  <!-- #postInformations -->
 
         <div id="articleText" v-dompurify-html="thisArticle.text"></div> <!-- #articleText -->
 
-        <div id="articleMedia">
-            미디어 링크
-        </div> <!-- #articleMedia -->
+        <MediaInfo :media-object="null" />
 
         <div id="postControls">
             <button type="button" class="button-post-controls" title="좋아요" style="--button-icon-color: var(--clr-alert);">
@@ -96,10 +94,20 @@
                     <span></span>
                 </div>
 
-                <p>댓글 <span>·</span> <span>총 {{ thisArticle.comments.length }} 개</span></p>
+                <p>댓글 <span>·</span> <span class="replies-counter">{{ thisArticle.comments.length.toLocaleString('ko-KR') }}</span></p>
             </div>
 
-            <ArticleReply v-for="(commentItem, index) in thisArticle.comments" :key="index" :reply-object="commentItem" />
+            <div id="repliesContainer" class="empty" v-if="thisArticle.comments.length === 0">
+                댓글이 존재하지 않습니다.
+            </div>
+
+            <div id="repliesContainer" v-else>
+                <ArticleReply v-for="(commentItem, index) in thisArticle.comments" :key="index" :reply-object="commentItem" />
+            </div>
+
+            <div>
+                댓글 작성기
+            </div>
         </div> <!-- #postReplies -->
     </article> <!-- #postDetail -->
 </template> <!-- Template Ends -->
@@ -108,8 +116,8 @@
     import { useRouter, useRoute } from 'vue-router';
     import postData from '../datas/postData.json'; // 임시 데이터
     import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
+    import MediaInfo from '../components/commons/MediaInfo.vue';
     import ArticleReply from '../components/ArticleReply.vue';
-import UserNameTag from '../components/elements/UserNameTag.vue';
 
     const router = useRouter();
     const route = useRoute();

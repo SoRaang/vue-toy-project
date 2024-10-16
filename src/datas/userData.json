@@ -1,19 +1,21 @@
 [
     {
         "id": 123125,
+        "type": "admin",
         "account": "dsc0320@hotmail.com",
         "password": "12345678",
-        "userName": "홍길동",
-        "userImage": "https://picsum.photos/96/96?random=6",
+        "userName": "은빛늑대",
+        "userImage": "/images/1.gif",
         "likedArticles": [],
         "commentedArticles": [],
         "dateCreated": "2024-09-13"
     },
     {
         "id": 123127,
+        "type": "user",
         "account": "dsc0320@naver.com",
         "password": "12345678",
-        "userName": "윤길동",
+        "userName": "암욜맨",
         "userImage": "https://picsum.photos/96/96?random=7",
         "likedArticles": [],
         "commentedArticles": [],
@@ -21,6 +23,7 @@
     },
     {
         "id": 823741,
+        "type": "user",
         "account": "dsc0320@gmail.com",
         "password": "12345678",
         "userName": "장길동",
@@ -31,6 +34,7 @@
     },
     {
         "id": 471662,
+        "type": "user",
         "account": "dsc0320@hanmail.net",
         "password": "12345678",
         "userName": "김길동",

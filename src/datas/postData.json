@@ -31,9 +31,7 @@
             754211
         ],
         "author": {
-            "userId": 123125,
-            "userName": "홍길동",
-            "userImage": "https://picsum.photos/96/96?random=4"
+            "userId": 123125
         },
         "date": "2024-09-12",
         "time": "23:11"
@@ -48,9 +46,7 @@
         "comments": [],
         "likes": [],
         "author": {
-            "userId": 123126,
-            "userName": "정길동",
-            "userImage": "https://picsum.photos/96/96?random=5"
+            "userId": 823741
         },
         "date": "2024-09-12",
         "time": "23:11"
@@ -65,9 +61,7 @@
         "comments": [],
         "likes": [],
         "author": {
-            "userId": 123127,
-            "userName": "윤길동",
-            "userImage": "https://picsum.photos/96/96?random=6"
+            "userId": 471662
         },
         "date": "2024-09-12",
         "time": "23:11"

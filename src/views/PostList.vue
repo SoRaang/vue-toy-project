@@ -63,6 +63,6 @@
     import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
 </script> <!-- Logic Ends -->
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style> <!-- Stylesheet Ends -->

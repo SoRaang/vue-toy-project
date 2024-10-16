@@ -1,13 +1,13 @@
 <template>
     <div id="guestBook">
         방명록
-    </div> <!-- #Component ID -->
+    </div> <!-- #guestBook -->
 </template> <!-- Template Ends -->
 
 <script setup>
 
 </script> <!-- Logic Ends -->
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style> <!-- Stylesheet Ends -->

@@ -8,7 +8,93 @@
     position: sticky;
     inset-block-start: 4.8rem;
     width: 12rem;
+    max-height: 90vh;
     transition: width .25s ease-out;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.sidebar-shown { // 사이드바 숨김 요소 토글
+    display: none;
+
+    &.on {
+        display: initial;
+    }
+}
+
+#contBlogInfo { // 블로그 정보 컨테이너
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: .8rem;
+    position: relative;
+    padding-inline: .8rem;
+}
+
+.blog-owner-image-container {
+    width: 4.8rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 25rem;
+    overflow: hidden;
+
+    > img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.blog-info-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: .4rem;
+}
+
+.blog-info-blog-name {
+    font-size: var(--fnt-xl);
+    text-align: center;
+    line-height: 1.2;
+    word-wrap: break-word;
+    word-break: balance;
+}
+
+.blog-info-blog-owner {
+    font-size: var(--fnt-sm);
+    font-weight: 200;
+    line-height: 2.4;
+}
+
+.blog-info-tag-container {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
+.blog-info-tags {
+    padding: .2rem .4rem;
+    border-radius: 25rem;
+    background-color: rgb(var(--clr-tint-0));
+    color: rgb(var(--clr-if-0));
+    font-size: var(--fnt-sm);
+    font-weight: 700;
+    user-select: none;
+
+    &::before {
+        font-size: var(--fnt-xs);
+        opacity: .75;
+        content: '# ';
+    }
+}
+
+#contBlogControls { // 블로그 컨트롤러 버튼 컨테이너
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .4rem;
+    margin-block: .4rem;
 }
 
 .rounded {
@@ -20,6 +106,31 @@
 @container main-container (max-width: 960px) {
     #sideBarMain {
         width: 3.6rem;
+    }
+
+    #contBlogInfo {
+        padding-inline: 0;
+    }
+
+    .blog-owner-image-container {
+        width: 3.6rem;
+    }
+
+    .sidebar-hidden {
+        display: none;
+    }
+
+    #contBlogControls {
+        flex-flow: column nowrap;
+        margin-block: .8rem;
+
+        button {
+            background-color: rgb(var(--clr-surface-20));
+
+            &:focus {
+                background-color: rgb(var(--clr-theme));
+            }
+        }
     }
 }
 

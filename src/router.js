@@ -39,6 +39,15 @@ const router = createRouter({ // 라우터 정의
                             { name: 'Article' }
                         ]
                     }
+                },
+                { // 포스트 작성
+                    path: 'write',
+                    component: () => import('./views/PostWrite.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { name: 'Write' }
+                        ]
+                    }
                 }
             ]
         },
@@ -73,6 +82,16 @@ const router = createRouter({ // 라우터 정의
             meta: {
                 breadcrumb: [
                     { name: 'Guestbook' }
+                ]
+            }
+        },
+        {
+            path: '/admin',
+            name: 'Admin',
+            component: () => import('./views/admin/Dashboard.vue'),
+            meta: {
+                breadCrumb: [
+                    { name: 'Dashboard' }
                 ]
             }
         }
