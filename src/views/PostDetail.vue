@@ -67,10 +67,10 @@
 
             <button type="button" class="button-post-controls" title="미디어" style="--button-icon-color: var(--clr-clear);">
                 <svg class="remix">
-                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-music-2-line"></use>
+                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-movie-2-line"></use>
                 </svg>
 
-                <span>미디어</span>
+                <span>작품 정보</span>
             </button>
 
             <button type="button" class="button-post-controls" title="공유" style="--button-icon-color: var(--clr-warn);">

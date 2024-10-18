@@ -19,6 +19,12 @@
     }
 }
 
+#totalSearchContainer {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+}
+
 .article-item {
     display: flex;
     gap: .8rem;

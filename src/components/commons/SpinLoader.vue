@@ -1,5 +1,5 @@
 <template>
-    <aside id="spinLoader">
+    <aside id="spinLoader" v-if="props.isLoading">
         <div>
             loading...
         </div>
@@ -7,5 +7,5 @@
 </template> <!-- Template Ends -->
 
 <script setup>
-
+    const props = defineProps([ 'isLoading' ]);
 </script> <!-- Logic Ends -->

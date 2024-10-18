@@ -30,16 +30,60 @@
             </ul>
         </nav> <!-- #navPrimary -->
 
-        <div id="menuElements">
-            <div id="totalSearchContainer">
-                <input type="text" name="search-keyword" id="txtTotalSearch" v-model="searchKeyword">
+        <div id="menuElements" :class="mobileBurgerActive ? 'on' : null">
+            <div class="mobile-menu-container">
+                <input type="checkbox" name="check-color-theme" id="chkTheme">
 
-                <ButtonWithIcon element-id="btnTotalSearch" icon-position="only" icon-name="search-2-line" @click="console.log(searchKeyword)">
-                    검색
-                </ButtonWithIcon>
-            </div> <!-- #totalSearchContainer -->
+                <label for="chkTheme">
+                    <span>다크 테마 전환</span>
+                </label>
+            </div>
 
-            <UserControls />
+            <div class="mobile-menu-container mobile-navigation">
+                <ul id="navSecondary">
+                    <li class="mobile-nav-item">
+                        <RouterLink to="/">
+                            <svg class="remix">
+                                <use xlink:href="/miscs/remixicon.symbol.svg#ri-home-4-line"></use>
+                            </svg>
+
+                            <span>홈</span>
+                        </RouterLink>
+                    </li>
+
+                    <li class="mobile-nav-item">
+                        <RouterLink to="/posts">
+                            <svg class="remix">
+                                <use xlink:href="/miscs/remixicon.symbol.svg#ri-article-line"></use>
+                            </svg>
+
+                            <span>포스트</span>
+                        </RouterLink>
+                    </li>
+
+                    <li class="mobile-nav-item">
+                        <RouterLink to="/movies">
+                            <svg class="remix">
+                                <use xlink:href="/miscs/remixicon.symbol.svg#ri-movie-2-line"></use>
+                            </svg>
+
+                            <span>리뷰한 영화</span>
+                        </RouterLink>
+                    </li>
+
+                    <li class="mobile-nav-item">
+                        <RouterLink to="/guestbook">
+                            <svg class="remix">
+                                <use xlink:href="/miscs/remixicon.symbol.svg#ri-book-marked-line"></use>
+                            </svg>
+
+                            <span>방명록</span>
+                        </RouterLink>
+                    </li>
+                </ul>
+            </div>
+
+            <UserControls class="mobile-menu-container" />
         </div> <!-- #menuElements -->
 
         <button type="button" id="btnBurger" title="모바일 네비게이션 열기 / 닫기" :class="mobileBurgerActive ? 'on' : null" @click="mobileBurgerActive = !mobileBurgerActive">
@@ -47,36 +91,6 @@
             <span></span>
             <span></span>
         </button>
-
-        <aside id="mobileNav" :class="mobileBurgerActive ? 'on' : null">
-            <div class="mobile-nav-inner-container">
-                ㅇㅇ
-            </div>
-
-            <div class="mobile-nav-inner-container">
-                <ul>
-                    <li>
-                        <RouterLink to="/">홈</RouterLink>
-                    </li>
-
-                    <li>
-                        <RouterLink to="/posts">포스트</RouterLink>
-                    </li>
-
-                    <li>
-                        <RouterLink to="/movies">리뷰한 영화</RouterLink>
-                    </li>
-
-                    <li>
-                        <RouterLink to="/guestbook">방명록</RouterLink>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="mobile-nav-inner-container">
-                <button>wjgpoj</button>
-            </div>
-        </aside>
     </header> <!-- #headPrimary -->
 </template> <!-- Template Ends -->
 
@@ -84,8 +98,7 @@
     import { onMounted, ref } from 'vue';
     import UserControls from './UserControls.vue';
 
-    const searchKeyword = defineModel({ default: '' });
-    const mobileBurgerActive = ref(false);
+    const mobileBurgerActive = ref(false); // 모바일 네비게이션 표시를 위한 변수
 
     let timedSizing = null;
 

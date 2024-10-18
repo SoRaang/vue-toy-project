@@ -13,6 +13,14 @@
                 <option value="all">전체</option>
                 <option v-for="(catItem, index) in postCategory" :key="index" :value="index">{{ catItem }}</option>
             </select>
+
+            <div id="totalSearchContainer">
+                <input type="text" name="search-keyword" id="txtTotalSearch" v-model="searchKeyword" placeholder="검색 키워드 입력...">
+
+                <ButtonWithIcon element-id="btnTotalSearch" icon-position="only" icon-name="search-2-line" @click="console.log(searchKeyword)">
+                    검색
+                </ButtonWithIcon>
+            </div> <!-- #totalSearchContainer -->
         </div> <!-- #postFilter -->
 
         <ul id="postItemList" v-if="postData">
@@ -68,6 +76,8 @@
 <script setup>
     import postData from '../datas/postData.json'; // 임시 데이터
     import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
+
+    const searchKeyword = defineModel({ default: '' }); // 검색 키워드 v-model
 </script> <!-- Logic Ends -->
 
 <style lang="scss" scoped>
