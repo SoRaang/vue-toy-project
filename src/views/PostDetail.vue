@@ -20,9 +20,9 @@
             </button>
 
             <div class="slider-pagination"></div>
-        </div> <!-- #postImageSlider -->
+        </div> <!-- #postImageSlider - 이미지가 존재할 때 -->
 
-        <div id="postImageSlider" class="no-images" v-else></div> <!-- #postImageSlider -->
+        <div id="postImageSlider" class="no-images" v-else></div> <!-- #postImageSlider - 이미지가 없을 때 -->
 
         <div id="postInformations">
             <p class="article-info-category">{{ postCategory[thisArticle.category] }}</p>
@@ -98,17 +98,39 @@
             </div>
 
             <div id="repliesContainer" class="empty" v-if="thisArticle.comments.length === 0">
-                댓글이 존재하지 않습니다.
-            </div>
+                <svg class="remix">
+                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-chat-delete-line"></use>
+                </svg>
+
+                <p>아직 댓글이 없어요.</p>
+            </div> <!-- #repliesContainer - 댓글이 없을 때 -->
 
             <div id="repliesContainer" v-else>
                 <ArticleReply v-for="(commentItem, index) in thisArticle.comments" :key="index" :reply-object="commentItem" />
-            </div>
+            </div> <!-- #repliesContainer - 댓글이 존재할 때 -->
 
-            <div>
-                댓글 작성기
-            </div>
+            <div id="replyEditor">
+                <div id="replyingUser">
+                    <UserNameTag />
+                </div> <!-- #replyingUser -->
+
+                <div id="replyingInput">
+                    <textarea name="reply-input" id="txtReply" rows="3" placeholder="댓글은 내 마음을 비추는 거울입니다. 나 자신과 상대방을 위한 배려와 책임을 담아 작성해 주세요."></textarea>
+
+                    <button type="button" id="btnSubmitReply">
+                        <svg class="remix">
+                            <use xlink:href="/miscs/remixicon.symbol.svg#ri-corner-down-left-line"></use>
+                        </svg>
+
+                        <span>등록</span>
+                    </button>
+                </div> <!-- #replyingInput -->
+            </div> <!-- #replyEditor -->
         </div> <!-- #postReplies -->
+
+        <div>
+            <button @click="router.go(-1)">뒤로</button>
+        </div>
     </article> <!-- #postDetail -->
 </template> <!-- Template Ends -->
 

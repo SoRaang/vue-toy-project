@@ -21,7 +21,7 @@
                 </li>
 
                 <li class="nav-item prime">
-                    <RouterLink to="/portfolio">포트폴리오</RouterLink>
+                    <RouterLink to="/movies">리뷰한 영화</RouterLink>
                 </li>
 
                 <li class="nav-item prime">
@@ -41,13 +41,65 @@
 
             <UserControls />
         </div> <!-- #menuElements -->
+
+        <button type="button" id="btnBurger" title="모바일 네비게이션 열기 / 닫기" :class="mobileBurgerActive ? 'on' : null" @click="mobileBurgerActive = !mobileBurgerActive">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <aside id="mobileNav" :class="mobileBurgerActive ? 'on' : null">
+            <div class="mobile-nav-inner-container">
+                ㅇㅇ
+            </div>
+
+            <div class="mobile-nav-inner-container">
+                <ul>
+                    <li>
+                        <RouterLink to="/">홈</RouterLink>
+                    </li>
+
+                    <li>
+                        <RouterLink to="/posts">포스트</RouterLink>
+                    </li>
+
+                    <li>
+                        <RouterLink to="/movies">리뷰한 영화</RouterLink>
+                    </li>
+
+                    <li>
+                        <RouterLink to="/guestbook">방명록</RouterLink>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mobile-nav-inner-container">
+                <button>wjgpoj</button>
+            </div>
+        </aside>
     </header> <!-- #headPrimary -->
 </template> <!-- Template Ends -->
 
 <script setup>
+    import { onMounted, ref } from 'vue';
     import UserControls from './UserControls.vue';
 
     const searchKeyword = defineModel({ default: '' });
+    const mobileBurgerActive = ref(false);
+
+    let timedSizing = null;
+
+    onMounted(() => {
+        window.addEventListener('resize', () => { // 화면 리사이즈시 모바일 네비게이션을 숨기기 위한 펑션
+            clearTimeout(timedSizing);
+
+            timedSizing = setTimeout(() => {
+                if (window.innerWidth > 640) {
+                    mobileBurgerActive.value = false;
+                }
+            }, 250);
+        });
+    });
 </script> <!-- Logic Ends -->
 
 <style lang="scss" scoped>

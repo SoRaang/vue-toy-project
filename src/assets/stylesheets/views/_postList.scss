@@ -2,14 +2,20 @@
 
 #postFilter {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     gap: .4rem;
     padding-block: .8rem;
 
     > label {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
         font-size: var(--fnt-sm);
         opacity: .5;
+
+        > .remix {
+            width: .8rem;
+        }
     }
 }
 

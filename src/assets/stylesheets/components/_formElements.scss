@@ -65,6 +65,12 @@ input { // 폼 입력 요소 공통
     }
 }
 
+textarea {
+    @include input-commons();
+
+    padding-block: .4rem;
+}
+
 select {
     @include input-commons();
 

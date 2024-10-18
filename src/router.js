@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from './views/Home.vue';
 import PostList from './views/PostList.vue';
-import PortfolioList from './views/PortfolioList.vue';
+import FilmList from './views/FilmList.vue';
 import GuestBook from './views/GuestBook.vue';
 
 const router = createRouter({ // 라우터 정의
@@ -52,15 +52,15 @@ const router = createRouter({ // 라우터 정의
             ]
         },
         { // 포트폴리오
-            path: '/portfolio',
+            path: '/movies',
             children: [
                 {
                     path: '',
-                    name: 'Portfolio',
-                    component: PortfolioList,
+                    name: 'Movies',
+                    component: FilmList,
                     meta: {
                         breadcrumb: [
-                            { name: 'Portfolio' }
+                            { name: 'Movies' }
                         ]
                     }
                 },
@@ -86,8 +86,8 @@ const router = createRouter({ // 라우터 정의
             }
         },
         {
-            path: '/admin',
-            name: 'Admin',
+            path: '/settings',
+            name: 'Settings',
             component: () => import('./views/admin/Dashboard.vue'),
             meta: {
                 breadCrumb: [

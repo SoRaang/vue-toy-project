@@ -22,7 +22,7 @@
     import { ref } from 'vue';
     import { useUserStore } from '../stores/userInfo';
 
-    const isLoggedIn = ref(true);
+    const isLoggedIn = ref(false);
     const user = useUserStore();
 </script> <!-- Logic Ends -->
 

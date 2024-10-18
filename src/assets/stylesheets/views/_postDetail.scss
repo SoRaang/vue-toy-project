@@ -127,8 +127,8 @@
     user-select: none;
 
     > span {
-        opacity: .5;
         font-weight: 900;
+        opacity: .5;
     }
 }
 
@@ -188,7 +188,7 @@
     gap: .8rem;
     margin-block: 2.4rem;
     padding-block: 1.2rem;
-    border-block: 1px solid rgb(var(--clr-tint-100) / .15);
+    border-block: 1px solid rgb(var(--clr-text) / .15);
 }
 
 #postReplies {
@@ -203,6 +203,7 @@
     gap: .4rem;
     font-size: var(--fnt-title-xs);
     font-weight: 700;
+    user-select: none;
 }
 
 .reply-bubble-animation {
@@ -254,6 +255,85 @@
     }
 }
 
+#repliesContainer {
+    &.empty {
+        display: grid;
+        place-items: center;
+        margin-block-end: 1.2rem;
+        height: 4.8rem;
+        opacity: .5;
+        user-select: none;
+        pointer-events: none;
+
+        > .remix {
+            width: 2.4rem;
+            opacity: .5;
+        }
+    }
+}
+
+#replyEditor {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .4rem;
+}
+
+#replyingUser {
+
+}
+
+#replyingInput {
+    display: flex;
+    gap: .4rem;
+    padding-block-end: .4rem;
+
+    &::before {
+        display: block;
+        margin-inline-start: .6rem;
+        width: .6rem;
+        height: .8rem;
+        border-inline-start: 1px solid rgb(var(--clr-text) / .25);
+        border-block-end: 1px solid rgb(var(--clr-text) / .25);
+        border-bottom-left-radius: .2rem;
+        content: '';
+    }
+}
+
+#txtReply {
+    width: 100%;
+    min-height: 4.2rem;
+    line-height: 1.4;
+    resize: vertical;
+}
+
+#btnSubmitReply {
+    flex-shrink: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+    width: 4.2rem;
+    border: 1px solid rgb(var(--clr-tint-60) / .5);
+    border-radius: .2rem;
+    background-color: rgb(var(--clr-theme) / .1);
+    color: rgb(var(--clr-tint-60));
+    font-weight: 700;
+
+    &:hover {
+        background-color: rgb(var(--clr-tint-60));
+        color: rgb(var(--clr-if-0));
+    }
+
+    &:active {
+        background-color: rgb(var(--clr-tint-0));
+    }
+
+    &:focus {
+        border-color: rgb(var(--clr-tint-100));
+    }
+}
+
 /* 반응형 쿼리 */
 
 @container main-container (max-width: 960px) {
@@ -281,7 +361,7 @@
     }
 
     #postControls {
-
+        padding-block: .8rem;
     }
 }
 

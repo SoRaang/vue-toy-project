@@ -1,5 +1,5 @@
 <template>
-    <div id="contMediaInfo">
+    <div id="mediaInfoContainer">
         <div>
             미디어 이미지
         </div>
@@ -8,7 +8,7 @@
             미디어 정보
             플레이어
         </div>
-    </div> <!-- #contMediaInfo -->
+    </div> <!-- #mediaInfoContainer -->
 </template> <!-- Template Ends -->
 
 <script setup>

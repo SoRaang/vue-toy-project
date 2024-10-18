@@ -1,7 +1,7 @@
 <template>
     <div class="user-name-tag">
         <div class="user-profile-image">
-            <img :src="thisUser?.userImage" alt="사용자 프로파일 이미지">
+            <img :src="thisUser ? thisUser.userImage : '/src/assets/images/unknown-user.jpg'" alt="사용자 프로파일 이미지">
         </div>
 
         <p class="user-name">

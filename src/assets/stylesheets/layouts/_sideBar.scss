@@ -9,8 +9,6 @@
     inset-block-start: 4.8rem;
     width: 12rem;
     max-height: 90vh;
-    transition: width .25s ease-out;
-    overflow-y: auto;
 
     &::-webkit-scrollbar {
         display: none;
@@ -25,7 +23,7 @@
     }
 }
 
-#contBlogInfo { // 블로그 정보 컨테이너
+#sideBlogInfoContainer { // 블로그 정보 컨테이너
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -35,14 +33,39 @@
 }
 
 .blog-owner-image-container {
+    position: relative;
     width: 4.8rem;
     aspect-ratio: 1 / 1;
     border-radius: 25rem;
-    overflow: hidden;
 
     > img {
         width: 100%;
         height: 100%;
+        border-radius: 25rem;
+        user-select: none;
+        pointer-events: none;
+    }
+}
+
+#btnShowInfo { // 모바일 블로그 소개 버튼
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    border-radius: 25rem;
+
+    > span {
+        display: none;
+    }
+
+    &:focus {
+        border: .2rem solid rgb(var(--clr-tint-0));
+        box-shadow: 0 0 .8rem rgb(var(--clr-theme) / .5);
+
+        > span {
+            display: block;
+        }
     }
 }
 
@@ -89,7 +112,7 @@
     }
 }
 
-#contBlogControls { // 블로그 컨트롤러 버튼 컨테이너
+#sideBlogControls { // 블로그 컨트롤러 버튼 컨테이너
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -106,10 +129,35 @@
 @container main-container (max-width: 960px) {
     #sideBarMain {
         width: 3.6rem;
+        z-index: 2;
     }
 
-    #contBlogInfo {
+    #btnShowInfo {
+        display: initial;
+        font-size: var(--fnt-sm);
+
+        &:hover {
+            background-color: rgb(var(--clr-background) / .5);
+        }
+    }
+
+    #sideBlogInfoContainer {
+        position: relative;
         padding-inline: 0;
+
+        &:focus-within {
+            .blog-info-container {
+                display: flex;
+                position: absolute;
+                inset-block-start: .4rem;
+                inset-inline-start: calc(100% + .4rem);
+                padding: .8rem;
+                width: 12rem;
+                border-radius: .4rem;
+                background-color: rgb(var(--clr-background) / .75);
+                backdrop-filter: blur(.4rem);
+            }
+        }
     }
 
     .blog-owner-image-container {
@@ -120,7 +168,7 @@
         display: none;
     }
 
-    #contBlogControls {
+    #sideBlogControls {
         flex-flow: column nowrap;
         margin-block: .8rem;
 

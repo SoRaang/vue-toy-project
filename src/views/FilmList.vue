@@ -1,7 +1,7 @@
 <template>
-    <div id="portfolio">
-        포폴
-    </div> <!-- #portfolio -->
+    <div id="filmList">
+        리뷰한 영화 목록
+    </div> <!-- #filmList -->
 </template> <!-- Template Ends -->
 
 <script setup>

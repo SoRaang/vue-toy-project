@@ -1,7 +1,14 @@
 <template>
     <div id="postList">
         <div id="postFilter">
-            <label for="lstCategory">카테고리</label>
+            <label for="lstCategory">
+                <svg class="remix">
+                    <use xlink:href="/miscs/remixicon.symbol.svg#ri-equalizer-line"></use>
+                </svg>
+
+                <span>카테고리</span>
+            </label>
+
             <select name="list-category" id="lstCategory">
                 <option value="all">전체</option>
                 <option v-for="(catItem, index) in postCategory" :key="index" :value="index">{{ catItem }}</option>

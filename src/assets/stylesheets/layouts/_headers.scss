@@ -125,11 +125,119 @@
     gap: .4rem;
 }
 
+#btnBurger {
+    display: none;
+    position: relative;
+    width: 1.6rem;
+    height: 1.6rem;
+    border: 1px solid rgb(var(--clr-max) / .25);
+    border-radius: 25rem;
+    background-color: rgb(var(--clr-background));
+
+    > span {
+        display: block;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: .1rem;
+        background-color: rgb(var(--clr-max));
+
+        &:nth-child(1) { // 마지막
+            inset-inline-start: .5rem;
+            height: .6rem;
+        }
+
+        &:nth-child(2) { // 중간
+            height: .3rem;
+        }
+
+        &:nth-child(3) { // 처음
+            inset-inline-end: .5rem;
+            height: .4rem;
+        }
+    }
+
+    &:hover {
+        background-color: rgb(var(--clr-max) / .1);
+    }
+
+    &.on {
+        border-color: transparent;
+        background-color: rgb(var(--clr-alert));
+        transition: .5s;
+
+        > span {
+            background-color: rgb(255 255 255);
+
+            &:nth-child(1) {
+                --burger-self-start: .4rem;
+                --burger-self-rotate: 45deg;
+
+                animation: burger-toggle .5s 1 forwards;
+            }
+
+            &:nth-child(2) {
+                height: 0;
+                transition: height .5s .5s;
+            }
+
+            &:nth-child(3) {
+                --burger-self-end: .4rem;
+                --burger-self-rotate: -45deg;
+
+                animation: burger-toggle .5s 1 forwards;
+            }
+        }
+    }
+}
+
+#mobileNav { // 모바일 네비게이션
+    position: absolute;
+    inset-block-start: calc(100% + .4rem);
+    inset-inline-end: 1.2rem;
+    min-width: 9.6rem;
+    border: 1px solid rgb(var(--clr-max) / .15);
+    border-radius: .4rem;
+    background-color: rgb(var(--clr-background) / .9);
+    box-shadow: 0 .8rem .8rem -.4rem rgb(0 0 0 / .5);
+    opacity: 0;
+    pointer-events: none;
+
+    &.on {
+        opacity: 1;
+        transition: opacity .25s;
+        pointer-events: initial;
+    }
+}
+
+.mobile-nav-inner-container {
+    padding: .8rem;
+
+    & + & {
+        border-block-start: 1px solid rgb(var(--clr-max) / .15);
+    }
+}
+
 /* 반응형 쿼리 */
 
 @container header-primary (max-width: 960px) {
+    #navPrimary {
+        gap: .6rem;
+    }
+
     #totalSearchContainer {
         display: none;
+    }
+
+    #btnLogin,
+    #btnLogout {
+        justify-content: center;
+        padding-inline: 0;
+        width: 1.6rem;
+
+        > span {
+            display: none;
+        }
     }
 }
 
@@ -140,6 +248,10 @@
 
     #userControls {
         display: none;
+    }
+
+    #btnBurger {
+        display: flex;
     }
 }
 
