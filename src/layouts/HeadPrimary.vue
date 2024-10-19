@@ -32,10 +32,32 @@
 
         <div id="menuElements" :class="mobileBurgerActive ? 'on' : null">
             <div class="mobile-menu-container">
-                <input type="checkbox" name="check-color-theme" id="chkTheme">
+                <input type="checkbox" name="check-color-theme" id="chkTheme" data-checkbox-type="toggle" data-switch-label="false">
 
                 <label for="chkTheme">
-                    <span>다크 테마 전환</span>
+                    <div class="switch-rail">
+                        <div class="switch-button">
+                            <div class="switch-icon-container">
+                                <div class="switch-false">
+                                    <svg class="remix">
+                                        <use xlink:href="/miscs/remixicon.symbol.svg#ri-sun-fill"></use>
+                                    </svg>
+                                </div>
+
+                                <div class="switch-true">
+                                    <svg class="remix">
+                                        <use xlink:href="/miscs/remixicon.symbol.svg#ri-moon-clear-fill"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="switch-label">다크 테마 전환</span>
+
+                    <div>
+
+                    </div>
                 </label>
             </div>
 
@@ -80,7 +102,7 @@
                             <span>방명록</span>
                         </RouterLink>
                     </li>
-                </ul>
+                </ul> <!-- #navSecondary -->
             </div>
 
             <UserControls class="mobile-menu-container" />

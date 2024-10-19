@@ -11,7 +11,7 @@
                 사용자 설정
             </ButtonWithIcon>
 
-            <ButtonWithIcon element-id="btnLogout" icon-position="back" icon-name="logout-box-r-line" style="--button-surface-color: 0 0 0 / 0; --button-outline-color: var(--clr-theme); --button-text-color: var(--clr-theme);">
+            <ButtonWithIcon element-id="btnLogout" icon-position="back" icon-name="logout-box-r-line" style="--button-surface-color: 0 0 0 / 0; --button-outline-color: var(--clr-theme) / .5; --button-text-color: var(--clr-theme);">
                 로그아웃
             </ButtonWithIcon>
         </div>

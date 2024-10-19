@@ -109,6 +109,12 @@
     gap: .8rem;
 }
 
+#chkTheme {
+    & + label {
+
+    }
+}
+
 .mobile-menu-container {
     &.mobile-navigation {
         padding: 0;
@@ -152,6 +158,12 @@
     display: flex;
     align-items: center;
     gap: .4rem;
+}
+
+#btnLogout {
+    &:hover {
+        color: rgb(var(--clr-if-0));
+    }
 }
 
 #btnBurger {
