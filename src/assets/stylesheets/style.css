@@ -879,6 +879,9 @@ a, a:visited {
     transition: opacity 0.25s;
     pointer-events: initial;
   }
+  #chkTheme + label .switch-label {
+    display: block;
+  }
   .mobile-navigation {
     display: block;
   }
@@ -1990,11 +1993,11 @@ input[type=checkbox]:is([data-checkbox-type=toggle]):is([data-switch-label=false
   display: none;
 }
 input[type=checkbox]:is([data-checkbox-type=toggle]) + label {
-  --switch-rail-false: 72 206 247;
+  --switch-rail-false: 255 255 255;
   --switch-rail-true: 59 38 136;
-  --switch-button-false: 255 251 0;
+  --switch-button-false: 255 102 0;
   --switch-button-true: 25 22 27;
-  --switch-icon-false: 255 102 0;
+  --switch-icon-false: 255 251 0;
   --switch-icon-true: 255 251 0;
   display: flex;
   align-items: center;

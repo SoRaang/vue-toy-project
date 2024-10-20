@@ -53,11 +53,7 @@
                         </div>
                     </div>
 
-                    <span class="switch-label">다크 테마 전환</span>
-
-                    <div>
-
-                    </div>
+                    <span class="switch-label">색상 테마 설정</span>
                 </label>
             </div>
 

@@ -284,6 +284,12 @@
         }
     }
 
+    #chkTheme + label {
+        .switch-label {
+            display: block;
+        }
+    }
+
     .mobile-navigation {
         display: block;
     }
