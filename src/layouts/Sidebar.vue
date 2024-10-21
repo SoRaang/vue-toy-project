@@ -106,7 +106,3 @@
     const didIFollowed = ref(true); // 임시 팔로우 정보
     const thisUser = ref(123125); // 임시 로그인 유저 정보
 </script> <!-- Logic Ends -->
-
-<style lang="scss" scoped>
-
-</style> <!-- Stylesheet Ends -->

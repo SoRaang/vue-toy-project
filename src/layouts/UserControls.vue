@@ -25,7 +25,3 @@
     const isLoggedIn = ref(true); // 임시 로그인 여부
     const user = useUserStore(); // 로그인 사용자 스토어
 </script> <!-- Logic Ends -->
-
-<style lang="scss" scoped>
-
-</style> <!-- Stylesheet Ends -->

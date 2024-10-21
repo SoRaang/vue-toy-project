@@ -7,7 +7,3 @@
 <script setup>
     const currentYear = new Date().getFullYear();
 </script> <!-- Logic Ends -->
-
-<style lang="scss" scoped>
-
-</style> <!-- Stylesheet Ends -->

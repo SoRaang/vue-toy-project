@@ -78,6 +78,8 @@
     import postCategory from '../datas/articleCategory.json'; // 임시 카테고리
 
     const searchKeyword = defineModel({ default: '' }); // 검색 키워드 v-model
+
+    postData.sort((a, b) => new Date(b.date) - new Date(a.date));
 </script> <!-- Logic Ends -->
 
 <style lang="scss" scoped>

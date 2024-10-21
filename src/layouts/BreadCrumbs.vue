@@ -13,7 +13,3 @@
 
     const currentPath = useRoute().matched;
 </script> <!-- Logic Ends -->
-
-<style lang="scss" scoped>
-
-</style> <!-- Stylesheet Ends -->

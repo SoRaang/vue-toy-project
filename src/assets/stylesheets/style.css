@@ -1017,7 +1017,7 @@ a, a:visited {
 }
 .blog-info-tags::before {
   font-size: var(--fnt-xs);
-  opacity: 0.75;
+  opacity: 0.5;
   content: "# ";
 }
 
@@ -1031,7 +1031,7 @@ a, a:visited {
 
 .rounded {
   padding: 0.8rem;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   background-color: rgb(var(--clr-min));
 }
 
@@ -1088,7 +1088,162 @@ a, a:visited {
 /* _sideBar.scss */
 /* _breadcrumbs.scss */
 /* _breadcrumbs.scss */
+/* _floatingButton.scss */
+#floatButtonContainer {
+  position: fixed;
+  inset-block-end: 1.2rem;
+  inset-inline-end: 1.2rem;
+  z-index: 49999;
+}
+#floatButtonContainer:focus-within .floating-opener {
+  border-color: rgb(var(--clr-max)/0.25);
+  background-color: rgb(var(--clr-min));
+  scale: 0.75;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(1) {
+  inset-block-end: calc(100% + 0.4rem);
+  scale: 1;
+  transition-delay: 0.1s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(2) {
+  inset-block-end: calc(200% + 0.8rem);
+  scale: 1;
+  transition-delay: 0.2s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(3) {
+  inset-block-end: calc(300% + 1.2rem);
+  scale: 1;
+  transition-delay: 0.3s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(4) {
+  inset-block-end: calc(400% + 1.6rem);
+  scale: 1;
+  transition-delay: 0.4s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(5) {
+  inset-block-end: calc(500% + 2rem);
+  scale: 1;
+  transition-delay: 0.5s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(6) {
+  inset-block-end: calc(600% + 2.4rem);
+  scale: 1;
+  transition-delay: 0.6s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(7) {
+  inset-block-end: calc(700% + 2.8rem);
+  scale: 1;
+  transition-delay: 0.7s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(8) {
+  inset-block-end: calc(800% + 3.2rem);
+  scale: 1;
+  transition-delay: 0.8s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(9) {
+  inset-block-end: calc(900% + 3.6rem);
+  scale: 1;
+  transition-delay: 0.9s;
+}
+#floatButtonContainer:focus-within > .floating-button:nth-of-type(10) {
+  inset-block-end: calc(1000% + 4rem);
+  scale: 1;
+  transition-delay: 1s;
+}
+
+.floating-opener {
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: 1px solid transparent;
+  border-radius: 25rem;
+  background-color: rgb(var(--clr-min));
+  transition: 0.25s;
+}
+
+.floating-button {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 25rem;
+  background-color: rgb(var(--clr-surface-20));
+  scale: 0.5;
+  transition: 0.25s;
+  z-index: -1;
+}
+
+@media screen and (max-width: 640px) {
+  #floatButtonContainer {
+    inset-block-end: 1.2rem;
+    transition: inset-block-end 0.5s;
+  }
+}
+/* _floatingButton.scss */
 /* _landingPage.scss */
+#secHero {
+  position: relative;
+  padding: 1.2rem;
+  height: 16rem;
+  border-radius: 0.4rem;
+  background-color: rgb(var(--clr-min));
+  overflow: hidden;
+}
+#secHero::before {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+  z-index: 1;
+  content: "";
+}
+#secHero::after {
+  display: block;
+  position: absolute;
+  inset: 1.2rem 2.4rem;
+  margin-inline-start: auto;
+  padding: 0.4rem 0.8rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: 1px solid currentColor;
+  border-radius: 0.2rem;
+  font-size: var(--fnt-sm);
+  font-weight: 900;
+  opacity: 0.5;
+  z-index: 1;
+  content: "최근 글";
+}
+#secHero > div {
+  position: absolute;
+  inset: 1.2rem 2.4rem;
+  margin-block-start: auto;
+  width: min(100% - 4.8rem, 24rem);
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 2;
+}
+#secHero > div > p {
+  margin-block-end: 0.8rem;
+  font-size: 2.4ch;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#secHero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* _landingPage.scss */
 /* _postList.scss */
 #postFilter {
